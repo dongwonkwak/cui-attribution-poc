@@ -101,7 +101,7 @@ PYTHONPATH=src .venv/bin/python run.py S1     # 특정 시나리오만
 | D-04 | 스코어 상한·디스카운트 상한 | 제안서 8.5 명세 그대로 |
 | D-05 | 분기 임계 alert60/suppress35/margin0.15 | 회색지대를 manual_review로 보내는 보수적 설정 |
 | D-06 | incident=케이블 횡단 시점(없으면 최고severity) | 사용자 요청. 횡단이 결합창 vessel_behavior에 반영되도록 |
-| **D-07** | **속도 피크 2.5→1.5kt 정정** | 앵커 드래그 실측 표류속도(0.5~2kt)에 맞춤. 임계 끼워맞춤이 아닌 물리상수 정정 |
+| **D-07** | **속도 피크 2.5→1.5kt 정정** | 앵커 드래그 실측 표류속도(0.5~2kt)에 맞춤. 임계 끼워맞춤이 아닌 물리상수 정정. 정정 전 2.5kt에서는 최종 config 기준 risk 57.65 → manual_review(정정으로 alert 복귀, 민감도 표 참조). 민감도: peak ∈ [1.0, 2.0] kt에서 S1 분기 alert 유지 (`outputs/sensitivity_D07.md`) |
 | D-08 | 후보 점수 활동성 게이팅 | 정박선이 근접만으로 위협(specific_vessel)이 되지 않도록. natural_noise는 '활동성 의심 선박 부재', sensor_fault는 반복패턴 시에만 강하게 |
 | D-09 | S3 METOC incident=선박 고립지점 | 스펙 S3 '인근 의심 선박 부재' 정의 충족 |
 | D-10 | crossings=전체항적 횡단시각 중 창내 카운트 | AIS 희소로 횡단쌍이 창 경계에 걸리는 샘플링 아티팩트 보정 |
