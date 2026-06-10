@@ -219,7 +219,7 @@ def render_summary(results: list, rubric_by_scenario: dict) -> str:
     L.append("naive = 수중 이벤트 severity 임계만으로 alert. 융합이 문맥 반영해 강등한 건수.")
     L.append("| ID | naive | 융합 | 강등 | 근거 |")
     L.append("|---|---|---|---|---|")
-    reason = {"S2": "허가 정비 일치", "S3": "악천후 자연 노이즈·활동성 선박 부재",
+    reason = {"S2": "허가 정비 일치", "S3": "악천후 자연 노이즈 — 정박 선박 존재로 METOC 감점 부분 적용, 활동성 의심 거동 부재",
               "S4": "AIS-dark 능동 의심 → 수동 검토 escalation", "S5": "전원저하 노드 반복 이상값"}
     for r in results:
         L.append(f"| {r['id']} | {r['naive_branch']} | {r['actual_decision']} | "

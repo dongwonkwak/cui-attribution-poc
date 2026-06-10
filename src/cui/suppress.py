@@ -54,7 +54,7 @@ def compute_discounts(ctx: dict, coupling, scoring_cfg: dict) -> Discounts:
             d.metoc_noise = base if weak_vessel else base * 0.3
             d.rationale.append(
                 f"파고 {wave}m(≥{thr}) 악천후"
-                + ("·의심 선박 부재" if weak_vessel else "·선박 행동 존재로 부분 적용")
+                + ("·의심 선박 부재" if weak_vessel else "·정박 선박 존재로 METOC 감점 부분 적용")
                 + f" → -{round(d.metoc_noise,2)} 감점"
             )
 

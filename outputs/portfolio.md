@@ -37,7 +37,7 @@ naive = 수중 이벤트 severity 임계만으로 alert. 융합이 문맥 반영
 |---|---|---|---|---|
 | S1 | alert | alert | - | - |
 | S2 | alert | suppress | 예 | 허가 정비 일치 |
-| S3 | alert | suppress | 예 | 악천후 자연 노이즈·활동성 선박 부재 |
+| S3 | alert | suppress | 예 | 악천후 자연 노이즈 — 정박 선박 존재로 METOC 감점 부분 적용, 활동성 의심 거동 부재 |
 | S4 | alert | manual_review | 예 | AIS-dark 능동 의심 → 수동 검토 escalation |
 | S5 | alert | suppress | 예 | 전원저하 노드 반복 이상값 |
 
@@ -177,7 +177,7 @@ naive = 수중 이벤트 severity 임계만으로 alert. 융합이 문맥 반영
 #### 결과
 - naive 는 `alert`(오탐) 이나, 융합은 문맥을 반영해 **`suppress` 로 옳게 강등**.
 - 강등 근거(디스카운트):
-  - 파고 3.2m(≥2.5) 악천후·선박 행동 존재로 부분 적용 → -2.34 감점
+  - 파고 3.2m(≥2.5) 악천후·정박 선박 존재로 METOC 감점 부분 적용 → -2.34 감점
   - 최근접 노드 SN-BHC-1-B 전원저하 → -6.0 감점
 
 ---

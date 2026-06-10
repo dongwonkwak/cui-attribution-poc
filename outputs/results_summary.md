@@ -21,7 +21,7 @@ naive = 수중 이벤트 severity 임계만으로 alert. 융합이 문맥 반영
 |---|---|---|---|---|
 | S1 | alert | alert | - | - |
 | S2 | alert | suppress | 예 | 허가 정비 일치 |
-| S3 | alert | suppress | 예 | 악천후 자연 노이즈·활동성 선박 부재 |
+| S3 | alert | suppress | 예 | 악천후 자연 노이즈 — 정박 선박 존재로 METOC 감점 부분 적용, 활동성 의심 거동 부재 |
 | S4 | alert | manual_review | 예 | AIS-dark 능동 의심 → 수동 검토 escalation |
 | S5 | alert | suppress | 예 | 전원저하 노드 반복 이상값 |
 
