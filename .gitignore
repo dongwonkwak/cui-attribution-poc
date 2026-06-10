@@ -1,0 +1,11 @@
+# 대용량 원본/캐시 (재현은 run 으로 재생성)
+data/aisdk-*.zip
+data/subset-*.pkl
+data/*.csv
+.venv/
+__pycache__/
+*.pyc
+/tmp/
+
+# macOS
+.DS_Store

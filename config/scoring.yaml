@@ -1,0 +1,40 @@
+# 위험도 스코어링(8.5) 가중·디스카운트 상한 + 후보 랭킹 가중.
+# raw = sensor_event_strength(0~25) + cable_proximity(0~20) + vessel_behavior(0~20)
+#     + ais_gap(0~10) + vessel_history(0~5)      # 가점 ≤ 80
+# normalized = raw / 80 * 100
+# risk = clamp(normalized - permit_discount(0~15) - metoc_discount(0~10)
+#                         - sensor_health_discount(0~10), 0, 100)
+
+contributions:
+  sensor_event_strength_max: 25   # 수중 이벤트 severity 기여 상한
+  cable_proximity_max: 20         # 케이블 근접도 기여 상한
+  vessel_behavior_max: 20         # 선박 행동(저속 체류/횡단/급선회) 기여 상한
+  ais_gap_max: 10                 # AIS 끊김 기여 상한
+  vessel_history_max: 5           # 반복 접근 이력 기여 상한
+raw_total_max: 80                 # 가점 합 상한(정규화 분모)
+
+discounts:
+  maintenance_permit_max: 15      # 허가 정비 일치 시 최대 감점
+  metoc_noise_max: 10             # METOC 자연 노이즈 가능성 최대 감점
+  sensor_health_max: 10           # 센서 전원/통신 불안정·반복장애 최대 감점
+
+# 선박 행동 기여 세부 가중(합산 후 vessel_behavior_max 로 클램프)
+vessel_behavior:
+  slow_dwell_weight: 8.0          # 보호구역 내 저속 체류
+  crossing_weight: 7.0            # 케이블 횡단 1회당
+  sharp_turn_weight: 5.0          # 급선회 발생
+
+# 8.3 후보 랭킹 가중 — 각 후보 신뢰도 점수를 만드는 요인 가중(0~1 정규화 후 합).
+ranking:
+  candidates:
+    - specific_vessel        # 특정 선박(앵커 드래깅 의심)
+    - ais_dark               # AIS-dark 활동
+    - permitted_maintenance  # 허가 정비
+    - legal_fishing          # 합법 조업
+    - natural_noise          # 자연 노이즈
+    - sensor_fault           # 센서 장애
+  # 요인→후보 가중표는 rank.py 에 규칙으로 구현(설명가능). 여기선 후보 목록만 고정.
+
+# naive 기준선(대조용): 수중 이벤트 severity 단일 임계만으로 alert 판정.
+naive:
+  severity_alert_threshold: 0.35  # 이 값 이상 수중 이벤트가 있으면 naive 는 무조건 alert

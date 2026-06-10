@@ -1,0 +1,23 @@
+[project]
+name = "cui-attribution-poc"
+version = "0.1.0"
+description = "CUI Threat Attribution Layer — 결정론적 PoC 검산 파이프라인 (룰 기반 다중출처 융합 판단 로직 검산)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "shapely>=2.0",
+    "pyyaml>=6.0",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

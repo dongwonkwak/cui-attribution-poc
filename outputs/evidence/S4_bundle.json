@@ -1,0 +1,405 @@
+{
+  "scenario": {
+    "id": "S4",
+    "name": "AIS-dark 의심"
+  },
+  "disclaimer": "합성 파생 데이터 기반 판단 로직 검산. 탐지 성능 주장 아님.",
+  "event_summary": {
+    "incident_event_id": "UW-219031421-0076",
+    "source": "underwater_sensor",
+    "event_type": "acoustic",
+    "severity": 0.671,
+    "confidence": 0.9289
+  },
+  "time_location": {
+    "event_time": "2026-06-03T07:55:06",
+    "location": {
+      "lat": 55.1866,
+      "lon": 14.703932,
+      "cable_segment_id": "BHC-1"
+    }
+  },
+  "cable_segment": {
+    "segment_id": "BHC-1",
+    "line": [
+      [
+        14.73352,
+        55.18323
+      ],
+      [
+        14.67189,
+        55.19052
+      ]
+    ],
+    "protection_buffer_m": 500
+  },
+  "underwater_event": {
+    "event": {
+      "event_id": "UW-219031421-0076",
+      "event_time": "2026-06-03T07:55:06",
+      "source": "underwater_sensor",
+      "event_type": "acoustic",
+      "location": {
+        "lat": 55.1866,
+        "lon": 14.703932,
+        "cable_segment_id": "BHC-1"
+      },
+      "asset_id": "BHC-1",
+      "severity": 0.671,
+      "confidence": 0.9289,
+      "metadata": {
+        "derived_from": {
+          "source": "DMA_AIS",
+          "mmsi": 219031421,
+          "ais_row_index": 40333,
+          "timestamp": "2026-06-03T07:55:06",
+          "sog": 0.0,
+          "cog": null,
+          "cable_distance_m": 14.2
+        },
+        "derivation": {
+          "formula": "severity = w_p*exp(-d/d0) + w_s*exp(-(SOG-peak)^2/(2*sigma^2)) + w_k*kin + noise",
+          "terms": {
+            "proximity": 0.9825,
+            "speed_term": 0.3247,
+            "kinematics": 0.0,
+            "seeded_noise": 0.1153
+          },
+          "params": {
+            "w_proximity": 0.45,
+            "w_speed": 0.35,
+            "w_kinematics": 0.2,
+            "d0_m": 800.0,
+            "peak_knots": 1.5,
+            "sigma_knots": 1.0,
+            "noise_amplitude": 0.03,
+            "seed": 20260610
+          },
+          "delta": {
+            "dCOG_deg": 0.0,
+            "dSOG_knots": 0.0
+          }
+        }
+      }
+    },
+    "derived_from": {
+      "source": "DMA_AIS",
+      "mmsi": 219031421,
+      "ais_row_index": 40333,
+      "timestamp": "2026-06-03T07:55:06",
+      "sog": 0.0,
+      "cog": null,
+      "cable_distance_m": 14.2
+    },
+    "derivation": {
+      "formula": "severity = w_p*exp(-d/d0) + w_s*exp(-(SOG-peak)^2/(2*sigma^2)) + w_k*kin + noise",
+      "terms": {
+        "proximity": 0.9825,
+        "speed_term": 0.3247,
+        "kinematics": 0.0,
+        "seeded_noise": 0.1153
+      },
+      "params": {
+        "w_proximity": 0.45,
+        "w_speed": 0.35,
+        "w_kinematics": 0.2,
+        "d0_m": 800.0,
+        "peak_knots": 1.5,
+        "sigma_knots": 1.0,
+        "noise_amplitude": 0.03,
+        "seed": 20260610
+      },
+      "delta": {
+        "dCOG_deg": 0.0,
+        "dSOG_knots": 0.0
+      }
+    }
+  },
+  "ais_tracks_candidates": {
+    "primary_mmsi": 219031421,
+    "raw_ais_excerpt": [
+      {
+        "timestamp": "2026-06-03T07:42:10",
+        "mmsi": 219031421,
+        "lat": 55.186597,
+        "lon": 14.703887,
+        "sog": 0.0,
+        "cog": null,
+        "nav_status": "Unknown value",
+        "cable_dist_m": 15.1
+      },
+      {
+        "timestamp": "2026-06-03T07:52:08",
+        "mmsi": 219031421,
+        "lat": 55.186595,
+        "lon": 14.703938,
+        "sog": 0.0,
+        "cog": null,
+        "nav_status": "Unknown value",
+        "cable_dist_m": 14.6
+      },
+      {
+        "timestamp": "2026-06-03T07:54:19",
+        "mmsi": 219031421,
+        "lat": 55.186595,
+        "lon": 14.703938,
+        "sog": 0.0,
+        "cog": null,
+        "nav_status": "Unknown value",
+        "cable_dist_m": 14.6
+      },
+      {
+        "timestamp": "2026-06-03T07:55:06",
+        "mmsi": 219031421,
+        "lat": 55.1866,
+        "lon": 14.703932,
+        "sog": 0.0,
+        "cog": null,
+        "nav_status": "Unknown value",
+        "cable_dist_m": 14.2
+      },
+      {
+        "timestamp": "2026-06-03T08:06:22",
+        "mmsi": 219031421,
+        "lat": 55.1866,
+        "lon": 14.703932,
+        "sog": 0.0,
+        "cog": null,
+        "nav_status": "Unknown value",
+        "cable_dist_m": 14.2
+      },
+      {
+        "timestamp": "2026-06-03T08:06:25",
+        "mmsi": 219031421,
+        "lat": 55.1866,
+        "lon": 14.703932,
+        "sog": 0.0,
+        "cog": null,
+        "nav_status": "Unknown value",
+        "cable_dist_m": 14.2
+      }
+    ],
+    "vessel_behaviors": [
+      {
+        "mmsi": 219004347,
+        "min_cable_dist_m": 186.4,
+        "dwell_in_zone_s": 1643.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.014,
+        "speed_var": 0.0013,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 82.0,
+        "event_space_dist_m": 229.1,
+        "n_points": 14
+      },
+      {
+        "mmsi": 219019909,
+        "min_cable_dist_m": 192.3,
+        "dwell_in_zone_s": 1587.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.0,
+        "speed_var": 0.0,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 673.0,
+        "event_space_dist_m": 178.1,
+        "n_points": 10
+      },
+      {
+        "mmsi": 219021300,
+        "min_cable_dist_m": 225.3,
+        "dwell_in_zone_s": 1439.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.0,
+        "speed_var": 0.0,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 891.0,
+        "event_space_dist_m": 217.9,
+        "n_points": 5
+      },
+      {
+        "mmsi": 219027963,
+        "min_cable_dist_m": 78.1,
+        "dwell_in_zone_s": 1700.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.29,
+        "speed_var": 0.0321,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 897.0,
+        "event_space_dist_m": 97.4,
+        "n_points": 10
+      },
+      {
+        "mmsi": 219031421,
+        "min_cable_dist_m": 14.2,
+        "dwell_in_zone_s": 1459.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.0,
+        "speed_var": 0.0,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 11.3,
+        "event_time_diff_s": 0.0,
+        "event_space_dist_m": 0.0,
+        "n_points": 7
+      },
+      {
+        "mmsi": 219978000,
+        "min_cable_dist_m": 27.4,
+        "dwell_in_zone_s": 1620.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.0,
+        "speed_var": 0.0,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 526.0,
+        "event_space_dist_m": 94.2,
+        "n_points": 19
+      }
+    ],
+    "cause_candidates": [
+      {
+        "name": "ais_dark",
+        "score": 0.5073,
+        "factors": [
+          {
+            "factor": "AIS 끊김 길이",
+            "value": "11.3min",
+            "contribution": 0.113
+          },
+          {
+            "factor": "끊김 전 케이블 근접",
+            "value": "14.2m",
+            "contribution": 0.3943
+          }
+        ]
+      },
+      {
+        "name": "natural_noise",
+        "score": 0.3,
+        "factors": [
+          {
+            "factor": "파고",
+            "value": "0.9m",
+            "contribution": 0.0
+          },
+          {
+            "factor": "활동성 의심 선박 부재",
+            "value": "예(max_act 0.124)",
+            "contribution": 0.3
+          }
+        ]
+      },
+      {
+        "name": "specific_vessel",
+        "score": 0.0754,
+        "factors": [
+          {
+            "factor": "활동성(횡단/표류/이동/급선회)",
+            "value": 0.113,
+            "contribution": 0.0
+          },
+          {
+            "factor": "케이블 횡단",
+            "value": "0회",
+            "contribution": 0.0
+          },
+          {
+            "factor": "보호구역 체류",
+            "value": "1459.0s",
+            "contribution": 0.2026
+          },
+          {
+            "factor": "이동/표류(속도)",
+            "value": "mean 0.0kt var 0.0",
+            "contribution": 0.0
+          },
+          {
+            "factor": "케이블 근접",
+            "value": "14.2m",
+            "contribution": 0.591
+          },
+          {
+            "factor": "이벤트 공간근접",
+            "value": "0.0m",
+            "contribution": 0.0
+          }
+        ]
+      },
+      {
+        "name": "legal_fishing",
+        "score": 0.0,
+        "factors": []
+      },
+      {
+        "name": "permitted_maintenance",
+        "score": 0.0,
+        "factors": []
+      },
+      {
+        "name": "sensor_fault",
+        "score": 0.0,
+        "factors": []
+      }
+    ]
+  },
+  "metoc": {
+    "wave_height_m": 0.9,
+    "current": "low"
+  },
+  "permit_check": {
+    "permit_match": null,
+    "result": "해당 허가 없음"
+  },
+  "sensor_health": {
+    "node_id": "SN-BHC-1-M",
+    "dist_m": 84.2,
+    "degraded": false
+  },
+  "risk_breakdown": {
+    "contributions": {
+      "sensor_event_strength": 16.78,
+      "cable_proximity": 19.62,
+      "vessel_behavior": 6.48,
+      "ais_gap": 1.88,
+      "vessel_history": 0.0
+    },
+    "component_max": {
+      "sensor_event_strength": 25,
+      "cable_proximity": 20,
+      "vessel_behavior": 20,
+      "ais_gap": 10,
+      "vessel_history": 5
+    },
+    "raw": 44.76,
+    "raw_max": 80,
+    "normalized": 55.95,
+    "discounts": {
+      "maintenance_permit": 0.0,
+      "metoc_noise": 0.0,
+      "sensor_health": 0.0,
+      "total": 0.0,
+      "rationale": []
+    },
+    "risk": 55.95
+  },
+  "decision": {
+    "branch": "manual_review",
+    "top_candidate": "ais_dark",
+    "second_candidate": "natural_noise",
+    "margin": 0.2073,
+    "rationale": "위협 후보 'ais_dark' 1순위이나 risk 56.0 가 회색지대(35.0~60.0) → 수동 검토."
+  },
+  "expected": {
+    "decision": "manual_review",
+    "top_candidate": "ais_dark"
+  }
+}

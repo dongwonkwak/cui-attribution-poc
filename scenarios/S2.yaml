@@ -1,0 +1,11 @@
+id: S2
+name: "허가 정비 오탐 억제"
+description: >
+  S1과 동일 구조(같은 선박 MMSI 219027963, 같은 구역·시간의 수중 이벤트)이되, 해당
+  선박·구역·시간이 정비 허가(MNT-2026-0603-01)와 일치. 융합은 허가 일치로 억제해야 함.
+incident_source: vessel
+incident_mmsi: 219027963
+enable_permit: true
+enable_history: true
+expected_decision: suppress
+expected_top_candidate: permitted_maintenance

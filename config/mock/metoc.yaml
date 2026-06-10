@@ -1,0 +1,24 @@
+# 가상 METOC(기상·해상) — 시간대별 파고/조류. (목업: 임의 설정, 근거 1줄씩)
+# 근거: 발트해 보른홀름 인근은 대체로 잔잔하나 저기압 통과 시 단시간 고파고 발생.
+#       S3(악천후 자연 노이즈) 검증용으로 08:00~12:00 한 구간을 고파고로 설정.
+# 단위: wave_height_m(유의파고, m), current(저/중/고 정성).
+
+windows:
+  - start: "2026-06-03T00:00:00"   # 야간 잔잔
+    wave_height_m: 0.7
+    current: low
+  - start: "2026-06-03T04:00:00"   # 새벽 잔잔
+    wave_height_m: 0.9
+    current: low
+  - start: "2026-06-03T08:00:00"   # ★악천후 구간(S3): 저기압 통과 가정
+    wave_height_m: 3.2
+    current: high
+  - start: "2026-06-03T12:00:00"   # 오후 완화
+    wave_height_m: 1.1
+    current: med
+  - start: "2026-06-03T16:00:00"   # 저녁 잔잔
+    wave_height_m: 0.8
+    current: low
+  - start: "2026-06-03T20:00:00"   # 야간 잔잔
+    wave_height_m: 0.6
+    current: low

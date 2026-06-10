@@ -1,0 +1,15 @@
+# 가상 정비 허가 — S2(허가 정비 오탐 억제)용. (목업: 임의 설정, 근거 1줄씩)
+# 근거: 해저 케이블 운영사는 점검·매설 작업 시 사전 작업허가(MMSI·구역·시간창)를 등록.
+#       S2는 S1과 동일 구조(같은 선박·구역·시간)이되 이 허가와 '일치'해 오탐 억제됨을 검증.
+# 일치 판정: permit.mmsi == 선박 AND 시각 ∈ time_window AND 위치 ∈ area(반경).
+
+permits:
+  - permit_id: "MNT-2026-0603-01"
+    mmsi: 219027963                       # S1 주인공과 동일 선박(대조 핵심)
+    operator: "Baltic Cable Maintenance A/S"
+    work_type: "cable inspection / seabed survey"
+    cable_segment_id: "BHC-1"
+    area:
+      center: [14.7027, 55.18688]         # [lon, lat] 케이블 중앙
+      radius_m: 1500                       # 작업 반경
+    time_window: ["2026-06-03T00:00:00", "2026-06-03T18:00:00"]

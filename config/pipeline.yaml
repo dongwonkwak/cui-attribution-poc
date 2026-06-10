@@ -1,0 +1,46 @@
+# 파이프라인 전역 설정 — 결정론(고정 시드) + 데이터 서브셋 + 케이블 기하 + 분기 임계값
+# 모든 임의 상수는 여기 또는 derivation.yaml/scoring.yaml 에만 존재한다.
+
+seed: 20260610          # 전역 고정 시드. 모든 seeded_noise/난수는 이 시드에서 파생.
+
+data:
+  date: "2026-06-03"    # 사용한 DMA 일 단위 파일 날짜 (aisdk-YYYY-MM-DD.zip)
+  source_url: "http://aisdata.ais.dk.s3.eu-central-1.amazonaws.com/aisdk-2026-06-03.zip"
+  # 서브셋 광역 bbox (보른홀름 인근 발트해). region_finder 가 이 안에서 후보 구역을 탐색.
+  bbox: { lat_min: 54.5, lat_max: 55.6, lon_min: 14.0, lon_max: 16.2 }
+  # 정제 임계: 비물리적 점프 속도(노트). 연속 포인트 환산속도가 이 값 초과 시 점프로 간주.
+  max_speed_knots: 60.0
+  min_points_per_track: 5      # 한 MMSI 항적 최소 포인트 수
+
+# 가상 케이블 라인 (선택 구역 확정 후 region_finder 결과로 갱신).
+# LineString 좌표 [lon, lat] 순서(shapely 관례). 보호구역 = 양쪽 buffer_m 버퍼.
+cable:
+  segment_id: "BHC-1"
+  # 후보 2 확정(중심 55.186,14.703 보른홀름 북서). region_finder가 1순위 표류선박
+  # MMSI 219027963 의 표류 방위에 수직으로 배치한 가상 케이블(총 ~4km).
+  line: [[14.73352, 55.18323], [14.67189, 55.19052]]   # [[lon,lat], ...]
+  buffer_m: 500                # 보호구역 반경(m). 케이블 양쪽 500m.
+  primary_vessel_mmsi: 219027963   # S1 앵커드래깅 주인공(실 표류 항적)
+
+# region_finder 탐색 파라미터
+# 앵커 드래깅은 '저속이면서 위치가 표류(drift)하며 케이블을 가로지르는' 선박이 핵심.
+# 종일 0kt·무표류로 고정된 순수 정박선은 S1엔 부적합(단 S2/S5 대조군으론 유용).
+region_finder:
+  time_window_hours: 12        # 후보 구역의 시간창 길이
+  proximity_m: 1500            # 케이블 후보선 인근으로 볼 거리(m)
+  slow_speed_knots: 3.0        # '저속'으로 간주할 SOG 상한
+  drift_min_m: 150             # 저속 구간 공간범위(extent) 하한 — 이 이상이면 '표류(drift) 선박'
+  min_slow_vessels: 3          # 후보 구역에 필요한 저속 선박 최소 수(체류 포함)
+  min_drift_vessels: 1         # 후보 구역에 필요한 표류 선박 최소 수(S1 성립 조건)
+  candidate_count: 3           # 보고할 후보 구역 수
+
+# 시공간 결합(8.2) 파라미터
+coupling:
+  window_minutes: 15           # 수중 이벤트 기준 ±N분 창에서 선박 행동 결합
+  ais_gap_min_minutes: 10      # 이 이상 끊기면 AIS gap 으로 간주
+
+# 판단 분기(decide) 임계값
+decision:
+  alert_risk_threshold: 60.0       # risk >= 이면 alert 후보
+  suppress_risk_threshold: 35.0    # risk < 이면 suppress 후보(위협후보 1순위 아닐 때)
+  candidate_margin: 0.15           # 상위 두 후보 점수차(0~1) < 이 값 + 계열 상충이면 manual_review

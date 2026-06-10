@@ -1,0 +1,470 @@
+[
+  {
+    "rank": 1,
+    "centroid_lon": 15.13531,
+    "centroid_lat": 55.06216,
+    "cable_line": [
+      [
+        15.10731,
+        55.06512
+      ],
+      [
+        15.16458,
+        55.05045
+      ]
+    ],
+    "slow_vessels": [
+      211894170,
+      219002339,
+      219002761,
+      219006391,
+      219016135,
+      219023780,
+      219024515,
+      219026503,
+      219029576,
+      219031814,
+      219034750,
+      219035785,
+      261005258,
+      261099060
+    ],
+    "drift_vessels": [
+      219029576
+    ],
+    "primary_vessel": 219029576,
+    "n_slow_vessels": 14,
+    "n_drift_vessels": 1,
+    "n_slow_points": 6745,
+    "time_span": [
+      "2026-06-03 00:00:05",
+      "2026-06-03 23:59:34"
+    ],
+    "vessel_summaries": [
+      {
+        "mmsi": 219029576,
+        "is_drift": true,
+        "is_primary": true,
+        "n_points_inzone": 1363,
+        "min_sog": 0.0,
+        "mean_sog": 0.0,
+        "extent_m": 348.9,
+        "drift_path_m": 1967.5,
+        "min_dist_m": 0.0,
+        "cable_crossings": 364,
+        "nav_status": "Under way using engine"
+      },
+      {
+        "mmsi": 219035785,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 135,
+        "min_sog": 0.0,
+        "mean_sog": 0.04,
+        "extent_m": 40.6,
+        "drift_path_m": 168.8,
+        "min_dist_m": 0.2,
+        "cable_crossings": 6,
+        "nav_status": "Not under command"
+      },
+      {
+        "mmsi": 219006391,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 387,
+        "min_sog": 0.0,
+        "mean_sog": 0.0,
+        "extent_m": 46.0,
+        "drift_path_m": 1140.5,
+        "min_dist_m": 446.9,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 261005258,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 478,
+        "min_sog": 0.0,
+        "mean_sog": 0.0,
+        "extent_m": 30.0,
+        "drift_path_m": 867.9,
+        "min_dist_m": 227.0,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 261099060,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 393,
+        "min_sog": 0.0,
+        "mean_sog": 0.26,
+        "extent_m": 23.3,
+        "drift_path_m": 793.4,
+        "min_dist_m": 148.0,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219034750,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 505,
+        "min_sog": 0.0,
+        "mean_sog": 0.02,
+        "extent_m": 21.0,
+        "drift_path_m": 444.2,
+        "min_dist_m": 478.0,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219016135,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 514,
+        "min_sog": 0.0,
+        "mean_sog": 0.05,
+        "extent_m": 19.9,
+        "drift_path_m": 506.5,
+        "min_dist_m": 467.2,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219026503,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 234,
+        "min_sog": 0.0,
+        "mean_sog": 0.05,
+        "extent_m": 15.5,
+        "drift_path_m": 214.7,
+        "min_dist_m": 484.1,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219031814,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 616,
+        "min_sog": 0.0,
+        "mean_sog": 0.01,
+        "extent_m": 14.6,
+        "drift_path_m": 329.2,
+        "min_dist_m": 507.5,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 211894170,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 277,
+        "min_sog": 0.0,
+        "mean_sog": 0.0,
+        "extent_m": 13.7,
+        "drift_path_m": 294.9,
+        "min_dist_m": 220.0,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219002761,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 416,
+        "min_sog": 0.0,
+        "mean_sog": 0.01,
+        "extent_m": 13.0,
+        "drift_path_m": 492.2,
+        "min_dist_m": 435.9,
+        "cable_crossings": 0,
+        "nav_status": "Moored"
+      },
+      {
+        "mmsi": 219023780,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 483,
+        "min_sog": 0.0,
+        "mean_sog": 0.0,
+        "extent_m": 12.4,
+        "drift_path_m": 398.7,
+        "min_dist_m": 444.6,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219002339,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 455,
+        "min_sog": 0.0,
+        "mean_sog": 0.0,
+        "extent_m": 10.4,
+        "drift_path_m": 173.2,
+        "min_dist_m": 345.9,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219024515,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 491,
+        "min_sog": 0.0,
+        "mean_sog": 0.01,
+        "extent_m": 6.8,
+        "drift_path_m": 297.7,
+        "min_dist_m": 501.6,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      }
+    ]
+  },
+  {
+    "rank": 2,
+    "centroid_lon": 14.70279,
+    "centroid_lat": 55.18645,
+    "cable_line": [
+      [
+        14.73352,
+        55.18323
+      ],
+      [
+        14.67189,
+        55.19052
+      ]
+    ],
+    "slow_vessels": [
+      219004347,
+      219006485,
+      219011657,
+      219019909,
+      219021219,
+      219021300,
+      219027963,
+      219031421,
+      219978000
+    ],
+    "drift_vessels": [
+      219027963
+    ],
+    "primary_vessel": 219027963,
+    "n_slow_vessels": 9,
+    "n_drift_vessels": 1,
+    "n_slow_points": 2699,
+    "time_span": [
+      "2026-06-03 00:00:27",
+      "2026-06-03 23:59:53"
+    ],
+    "vessel_summaries": [
+      {
+        "mmsi": 219027963,
+        "is_drift": true,
+        "is_primary": true,
+        "n_points_inzone": 334,
+        "min_sog": 0.0,
+        "mean_sog": 0.26,
+        "extent_m": 291.7,
+        "drift_path_m": 726.7,
+        "min_dist_m": 73.6,
+        "cable_crossings": 1,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219019909,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 611,
+        "min_sog": 0.0,
+        "mean_sog": 0.02,
+        "extent_m": 18.7,
+        "drift_path_m": 546.9,
+        "min_dist_m": 187.5,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219031421,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 136,
+        "min_sog": 0.0,
+        "mean_sog": 0.01,
+        "extent_m": 12.3,
+        "drift_path_m": 107.5,
+        "min_dist_m": 10.2,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219021300,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 296,
+        "min_sog": 0.0,
+        "mean_sog": 0.0,
+        "extent_m": 12.1,
+        "drift_path_m": 139.9,
+        "min_dist_m": 219.7,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219004347,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 412,
+        "min_sog": 0.0,
+        "mean_sog": 0.04,
+        "extent_m": 11.1,
+        "drift_path_m": 294.3,
+        "min_dist_m": 184.8,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219006485,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 8,
+        "min_sog": 0.0,
+        "mean_sog": 0.01,
+        "extent_m": 11.1,
+        "drift_path_m": 18.0,
+        "min_dist_m": 218.8,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219978000,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 867,
+        "min_sog": 0.0,
+        "mean_sog": 0.0,
+        "extent_m": 8.1,
+        "drift_path_m": 225.3,
+        "min_dist_m": 22.3,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219011657,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 16,
+        "min_sog": 0.0,
+        "mean_sog": 0.0,
+        "extent_m": 7.7,
+        "drift_path_m": 18.0,
+        "min_dist_m": 218.5,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219021219,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 22,
+        "min_sog": 0.0,
+        "mean_sog": 0.0,
+        "extent_m": 5.2,
+        "drift_path_m": 6.1,
+        "min_dist_m": 219.0,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      }
+    ]
+  },
+  {
+    "rank": 3,
+    "centroid_lon": 14.83624,
+    "centroid_lat": 55.24813,
+    "cable_line": [
+      [
+        14.81715,
+        55.23486
+      ],
+      [
+        14.85867,
+        55.2619
+      ]
+    ],
+    "slow_vessels": [
+      219002418,
+      219006838,
+      219018855,
+      219035906
+    ],
+    "drift_vessels": [
+      219006838
+    ],
+    "primary_vessel": 219006838,
+    "n_slow_vessels": 4,
+    "n_drift_vessels": 1,
+    "n_slow_points": 2560,
+    "time_span": [
+      "2026-06-03 00:00:04",
+      "2026-06-03 23:59:42"
+    ],
+    "vessel_summaries": [
+      {
+        "mmsi": 219006838,
+        "is_drift": true,
+        "is_primary": true,
+        "n_points_inzone": 9,
+        "min_sog": 0.0,
+        "mean_sog": 0.23,
+        "extent_m": 202.2,
+        "drift_path_m": 203.1,
+        "min_dist_m": 21.5,
+        "cable_crossings": 1,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219018855,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 563,
+        "min_sog": 0.0,
+        "mean_sog": 0.04,
+        "extent_m": 19.2,
+        "drift_path_m": 565.7,
+        "min_dist_m": 32.6,
+        "cable_crossings": 2,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219035906,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 465,
+        "min_sog": 0.0,
+        "mean_sog": 0.01,
+        "extent_m": 18.3,
+        "drift_path_m": 404.9,
+        "min_dist_m": 209.7,
+        "cable_crossings": 0,
+        "nav_status": "Unknown value"
+      },
+      {
+        "mmsi": 219002418,
+        "is_drift": false,
+        "is_primary": false,
+        "n_points_inzone": 1524,
+        "min_sog": 0.0,
+        "mean_sog": 0.0,
+        "extent_m": 13.5,
+        "drift_path_m": 1846.4,
+        "min_dist_m": 46.7,
+        "cable_crossings": 0,
+        "nav_status": "Under way using engine"
+      }
+    ]
+  }
+]

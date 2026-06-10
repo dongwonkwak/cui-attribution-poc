@@ -1,0 +1,296 @@
+{
+  "scenario": {
+    "id": "S5",
+    "name": "센서 장애"
+  },
+  "disclaimer": "합성 파생 데이터 기반 판단 로직 검산. 탐지 성능 주장 아님.",
+  "event_summary": {
+    "incident_event_id": "SF-SN-BHC-1-B-00",
+    "source": "underwater_sensor",
+    "event_type": "vibration",
+    "severity": 0.55,
+    "confidence": 0.3
+  },
+  "time_location": {
+    "event_time": "2026-06-03T02:00:00",
+    "location": {
+      "lat": 55.1895,
+      "lon": 14.68,
+      "cable_segment_id": "BHC-1"
+    }
+  },
+  "cable_segment": {
+    "segment_id": "BHC-1",
+    "line": [
+      [
+        14.73352,
+        55.18323
+      ],
+      [
+        14.67189,
+        55.19052
+      ]
+    ],
+    "protection_buffer_m": 500
+  },
+  "underwater_event": {
+    "event": {
+      "event_id": "SF-SN-BHC-1-B-00",
+      "event_time": "2026-06-03T02:00:00",
+      "source": "underwater_sensor",
+      "event_type": "vibration",
+      "location": {
+        "lat": 55.1895,
+        "lon": 14.68,
+        "cable_segment_id": "BHC-1"
+      },
+      "asset_id": "SN-BHC-1-B",
+      "severity": 0.55,
+      "confidence": 0.3,
+      "metadata": {
+        "derived_from": {
+          "source": "sensor_node",
+          "node_id": "SN-BHC-1-B",
+          "power_status": "degraded",
+          "comm_status": "intermittent"
+        },
+        "derivation": {
+          "formula": "전원 저하 노드 반복 이상값(룰)",
+          "rule": "power_status=='degraded' → 5회 @ 7분 간격",
+          "params": {
+            "severity": 0.55,
+            "confidence": 0.3
+          }
+        }
+      }
+    },
+    "derived_from": {
+      "source": "sensor_node",
+      "node_id": "SN-BHC-1-B",
+      "power_status": "degraded",
+      "comm_status": "intermittent"
+    },
+    "derivation": {
+      "formula": "전원 저하 노드 반복 이상값(룰)",
+      "rule": "power_status=='degraded' → 5회 @ 7분 간격",
+      "params": {
+        "severity": 0.55,
+        "confidence": 0.3
+      }
+    }
+  },
+  "ais_tracks_candidates": {
+    "primary_mmsi": 219978000,
+    "raw_ais_excerpt": [],
+    "vessel_behaviors": [
+      {
+        "mmsi": 219019909,
+        "min_cable_dist_m": 193.9,
+        "dwell_in_zone_s": 1746.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.0,
+        "speed_var": 0.0,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 408.0,
+        "event_space_dist_m": 1555.9,
+        "n_points": 14
+      },
+      {
+        "mmsi": 219021300,
+        "min_cable_dist_m": 226.5,
+        "dwell_in_zone_s": 1440.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.0,
+        "speed_var": 0.0,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 481.0,
+        "event_space_dist_m": 1513.3,
+        "n_points": 8
+      },
+      {
+        "mmsi": 219027963,
+        "min_cable_dist_m": 195.9,
+        "dwell_in_zone_s": 1680.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.214,
+        "speed_var": 0.0244,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 691.0,
+        "event_space_dist_m": 1463.8,
+        "n_points": 14
+      },
+      {
+        "mmsi": 219031421,
+        "min_cable_dist_m": 15.0,
+        "dwell_in_zone_s": 899.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.0,
+        "speed_var": 0.0,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 474.0,
+        "event_space_dist_m": 1549.8,
+        "n_points": 4
+      },
+      {
+        "mmsi": 219978000,
+        "min_cable_dist_m": 26.6,
+        "dwell_in_zone_s": 1588.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.0,
+        "speed_var": 0.0,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 621.0,
+        "event_space_dist_m": 1457.6,
+        "n_points": 17
+      }
+    ],
+    "cause_candidates": [
+      {
+        "name": "sensor_fault",
+        "score": 0.8,
+        "factors": [
+          {
+            "factor": "최근접 노드 전원저하",
+            "value": "SN-BHC-1-B",
+            "contribution": 0.3
+          },
+          {
+            "factor": "규칙적 반복 이상값",
+            "value": "예",
+            "contribution": 0.5
+          }
+        ]
+      },
+      {
+        "name": "natural_noise",
+        "score": 0.3,
+        "factors": [
+          {
+            "factor": "파고",
+            "value": "0.7m",
+            "contribution": 0.0
+          },
+          {
+            "factor": "활동성 의심 선박 부재",
+            "value": "예(max_act 0.092)",
+            "contribution": 0.3
+          }
+        ]
+      },
+      {
+        "name": "specific_vessel",
+        "score": 0.0699,
+        "factors": [
+          {
+            "factor": "활동성(횡단/표류/이동/급선회)",
+            "value": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "factor": "케이블 횡단",
+            "value": "0회",
+            "contribution": 0.0
+          },
+          {
+            "factor": "보호구역 체류",
+            "value": "1588.0s",
+            "contribution": 0.2206
+          },
+          {
+            "factor": "이동/표류(속도)",
+            "value": "mean 0.0kt var 0.0",
+            "contribution": 0.0
+          },
+          {
+            "factor": "케이블 근접",
+            "value": "26.6m",
+            "contribution": 0.584
+          },
+          {
+            "factor": "이벤트 공간근접",
+            "value": "1457.6m",
+            "contribution": 0.0
+          }
+        ]
+      },
+      {
+        "name": "ais_dark",
+        "score": 0.0,
+        "factors": []
+      },
+      {
+        "name": "legal_fishing",
+        "score": 0.0,
+        "factors": []
+      },
+      {
+        "name": "permitted_maintenance",
+        "score": 0.0,
+        "factors": []
+      }
+    ]
+  },
+  "metoc": {
+    "wave_height_m": 0.7,
+    "current": "low"
+  },
+  "permit_check": {
+    "permit_match": null,
+    "result": "해당 허가 없음"
+  },
+  "sensor_health": {
+    "node_id": "SN-BHC-1-B",
+    "dist_m": 0.0,
+    "degraded": true
+  },
+  "risk_breakdown": {
+    "contributions": {
+      "sensor_event_strength": 13.75,
+      "cable_proximity": 19.3,
+      "vessel_behavior": 7.06,
+      "ais_gap": 0.0,
+      "vessel_history": 0.0
+    },
+    "component_max": {
+      "sensor_event_strength": 25,
+      "cable_proximity": 20,
+      "vessel_behavior": 20,
+      "ais_gap": 10,
+      "vessel_history": 5
+    },
+    "raw": 40.11,
+    "raw_max": 80,
+    "normalized": 50.14,
+    "discounts": {
+      "maintenance_permit": 0.0,
+      "metoc_noise": 0.0,
+      "sensor_health": 10,
+      "total": 10.0,
+      "rationale": [
+        "최근접 노드 SN-BHC-1-B 전원저하·규칙적 반복 이상값 → -10 감점"
+      ]
+    },
+    "risk": 40.14
+  },
+  "decision": {
+    "branch": "suppress",
+    "top_candidate": "sensor_fault",
+    "second_candidate": "natural_noise",
+    "margin": 0.5,
+    "rationale": "양성 후보 'sensor_fault'(점수 0.80) 1순위, risk 40.1 → 오탐 억제."
+  },
+  "expected": {
+    "decision": "suppress",
+    "top_candidate": "sensor_fault"
+  }
+}

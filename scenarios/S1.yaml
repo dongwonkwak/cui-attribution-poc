@@ -1,0 +1,11 @@
+id: S1
+name: "앵커 드래깅 고위험"
+description: >
+  실 항적 중 저속·표류로 보호구역 케이블을 횡단하는 선박(MMSI 219027963)에서 파생된
+  수중 진동/음향 이벤트. 정비 허가 없음, METOC 양호, 반복 접근 이력 존재.
+incident_source: vessel
+incident_mmsi: 219027963
+enable_permit: false
+enable_history: true
+expected_decision: alert
+expected_top_candidate: specific_vessel

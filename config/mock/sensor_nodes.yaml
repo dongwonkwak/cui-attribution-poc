@@ -1,0 +1,23 @@
+# 가상 센서 노드 — 케이블 구간별 모니터링 노드. (목업: 임의 설정, 근거 1줄씩)
+# 근거: 해저 케이블 보호는 구간별 음향/진동 센서 노드로 수행되며 전원/통신 상태를 보고.
+#       S5(센서 장애)용으로 노드 1개를 전원 저하/간헐 통신으로 설정.
+# 좌표는 확정된 케이블 BHC-1 라인([14.73352,55.18323]~[14.67189,55.19052]) 위 3점.
+
+fault_start: "2026-06-03T02:00:00"          # S5 반복 이상값 시작 시각
+
+nodes:
+  - node_id: "SN-BHC-1-A"                    # 케이블 동단 근처
+    lat: 55.18403
+    lon: 14.72500
+    power_status: "nominal"
+    comm_status: "nominal"
+  - node_id: "SN-BHC-1-M"                    # 케이블 중앙
+    lat: 55.18688
+    lon: 14.70270
+    power_status: "nominal"
+    comm_status: "nominal"
+  - node_id: "SN-BHC-1-B"                    # ★전원 저하 노드(S5)
+    lat: 55.18950
+    lon: 14.68000
+    power_status: "degraded"
+    comm_status: "intermittent"

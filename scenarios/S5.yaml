@@ -1,0 +1,11 @@
+id: S5
+name: "센서 장애"
+description: >
+  전원 저하 노드(SN-BHC-1-B)의 규칙적 반복 이상값(02:00부터 7분 간격 5회). 선박 행동
+  부재. 기대 분기는 suppress 또는 manual_review 중 구현 결과로 판정·문서화(스펙 허용).
+incident_source: sensor_fault
+incident_mmsi: null
+enable_permit: false
+enable_history: false
+expected_decision: suppress      # 구현 후 판정. 허용집합: {suppress, manual_review}
+expected_top_candidate: sensor_fault

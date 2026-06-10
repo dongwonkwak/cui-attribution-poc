@@ -1,0 +1,11 @@
+id: S3
+name: "악천후 자연 노이즈"
+description: >
+  고파고 구간(METOC 08:00~12:00, 파고 3.2m)이 만드는 광역 다발 저신뢰 이벤트. 인근에
+  의심 선박 행동 부재. 융합은 자연 노이즈로 억제해야 함.
+incident_source: metoc
+incident_mmsi: null
+enable_permit: false
+enable_history: false
+expected_decision: suppress
+expected_top_candidate: natural_noise

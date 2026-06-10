@@ -1,0 +1,52 @@
+# 합성 수중 이벤트 파생 물리 상수 — 각 상수에 물리적 근거 1줄.
+# severity(t) = w_p*proximity + w_s*speed + w_k*kinematics + seeded_noise
+# 모든 합성 이벤트는 실 AIS 항적 포인트에서만 파생된다(원칙#2). 임의 이벤트 주입 금지.
+
+severity:
+  # 항별 가중치(합=1.0 권장). 근접도가 케이블 위협의 1차 요인이므로 최대.
+  w_proximity: 0.45     # 케이블에 가까울수록 해저 교란 결합 강함 → 최대 가중
+  w_speed: 0.35         # 앵커 드래그는 특정 저속대에서 발생 → 두 번째 가중
+  w_kinematics: 0.20    # 급변(드래그 시작 시그니처)은 보조 신호 → 보조 가중
+
+proximity:
+  d0_m: 800.0           # 감쇠 길이상수(m). exp(-d/d0). 케이블 교란이 의미있는 반경 ~800m 가정.
+
+speed:
+  # 앵커 드래그 운동학: 닻이 해저를 끌리는 실제 속도대는 약 0.5~2kt(천천히 끌림).
+  # 피크를 1.5kt로 둠(문헌상 드래그 표류 속도 중심). 정지(0kt)·고속(>4kt)은 꼬리 감쇠.
+  peak_knots: 1.5       # 드래그 신호 정점 속도(kt). 가우시안 피크 중심.
+  sigma_knots: 1.0      # 속도 민감도(kt). 0.5~2kt 저속대에 집중 반응.
+  # 주: 초기값 2.5kt는 드래그 실측 대비 높아 1.5kt로 정정(README 결정로그 D-07).
+
+kinematics:
+  # 급회전(ΔCOG)·급감속(ΔSOG↓)은 닻 걸림/드래그 개시의 운동학적 시그니처.
+  cog_weight: 0.6           # ΔCOG 기여. 횡단·급선회 시 가산.
+  sog_drop_weight: 0.4      # 급감속(음의 ΔSOG)만 기여(가속은 0).
+  cog_norm_deg: 90.0        # ΔCOG 정규화 기준(도). 90도 변화를 1.0으로.
+  sog_drop_norm_knots: 3.0  # ΔSOG 감소 정규화 기준(kt). 3kt 급감을 1.0으로.
+
+noise:
+  amplitude: 0.03       # seeded 가우시안 노이즈 표준편차. 신호(0~1) 대비 작게(≈3%).
+
+# 이벤트 생성 임계: severity 가 이 값 초과인 AIS 포인트에서만 수중 이벤트 생성.
+event_threshold: 0.35
+
+# 수중 이벤트 confidence: 신호 대비 노이즈/거리로 산출(0~1). 근접·강신호일수록 높음.
+confidence:
+  base: 0.5
+  proximity_bonus: 0.3   # 근접도 가중 보너스 상한
+  severity_bonus: 0.2    # severity 가중 보너스 상한
+
+# --- S3 악천후 광역 이벤트 (선박 무관, METOC 파생, 룰 기반) ---
+metoc_event:
+  wave_height_threshold_m: 2.5   # 이 파고 이상 구간에서 광역 저신뢰 이벤트 생성
+  severity: 0.40                 # 고정 저강도(자연 노이즈 수준)
+  confidence: 0.25               # 낮은 신뢰도(환경 노이즈)
+  count_per_window: 6            # 시간창당 생성할 광역 이벤트 수(분산 배치)
+
+# --- S5 센서 장애 반복 이상값 (전원 저하 노드, 룰 기반) ---
+sensor_fault_event:
+  severity: 0.55                 # 중간 강도(이상값처럼 보이나)
+  confidence: 0.30               # 낮은 신뢰(센서 불안정)
+  repeat_count: 5                # 동일 노드 반복 이상값 수(반복 패턴 시그니처)
+  interval_minutes: 7            # 반복 간격(분) — 규칙적 반복이 자연 이벤트와 구분점

@@ -1,0 +1,12 @@
+id: S4
+name: "AIS-dark 의심"
+description: >
+  보호구역 케이블 인근(최단 10.3m)을 지나던 선박(MMSI 219031421)이 약 231분간 AIS 송신
+  중단(dark). 끊김 시간창 내 파생 이벤트, 정비 허가 없음. 기대 분기는 alert 또는
+  manual_review 중 구현 결과로 판정·문서화(스펙 허용).
+incident_source: vessel
+incident_mmsi: 219031421
+enable_permit: false
+enable_history: false
+expected_decision: manual_review   # 구현 후 판정(아래 결정로그/문서 참조). 허용집합: {alert, manual_review}
+expected_top_candidate: ais_dark

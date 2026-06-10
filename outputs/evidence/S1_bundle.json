@@ -1,0 +1,399 @@
+{
+  "scenario": {
+    "id": "S1",
+    "name": "앵커 드래깅 고위험"
+  },
+  "disclaimer": "합성 파생 데이터 기반 판단 로직 검산. 탐지 성능 주장 아님.",
+  "event_summary": {
+    "incident_event_id": "UW-219027963-0096",
+    "source": "underwater_sensor",
+    "event_type": "acoustic",
+    "severity": 0.6902,
+    "confidence": 0.9095
+  },
+  "time_location": {
+    "event_time": "2026-06-03T07:14:59",
+    "location": {
+      "lat": 55.18616,
+      "lon": 14.702547,
+      "cable_segment_id": "BHC-1"
+    }
+  },
+  "cable_segment": {
+    "segment_id": "BHC-1",
+    "line": [
+      [
+        14.73352,
+        55.18323
+      ],
+      [
+        14.67189,
+        55.19052
+      ]
+    ],
+    "protection_buffer_m": 500
+  },
+  "underwater_event": {
+    "event": {
+      "event_id": "UW-219027963-0096",
+      "event_time": "2026-06-03T07:14:59",
+      "source": "underwater_sensor",
+      "event_type": "acoustic",
+      "location": {
+        "lat": 55.18616,
+        "lon": 14.702547,
+        "cable_segment_id": "BHC-1"
+      },
+      "asset_id": "BHC-1",
+      "severity": 0.6902,
+      "confidence": 0.9095,
+      "metadata": {
+        "derived_from": {
+          "source": "DMA_AIS",
+          "mmsi": 219027963,
+          "ais_row_index": 32874,
+          "timestamp": "2026-06-03T07:14:59",
+          "sog": 0.9,
+          "cog": null,
+          "cable_distance_m": 80.0
+        },
+        "derivation": {
+          "formula": "severity = w_p*exp(-d/d0) + w_s*exp(-(SOG-peak)^2/(2*sigma^2)) + w_k*kin + noise",
+          "terms": {
+            "proximity": 0.9049,
+            "speed_term": 0.8353,
+            "kinematics": 0.0,
+            "seeded_noise": -0.0094
+          },
+          "params": {
+            "w_proximity": 0.45,
+            "w_speed": 0.35,
+            "w_kinematics": 0.2,
+            "d0_m": 800.0,
+            "peak_knots": 1.5,
+            "sigma_knots": 1.0,
+            "noise_amplitude": 0.03,
+            "seed": 20260610
+          },
+          "delta": {
+            "dCOG_deg": 0.0,
+            "dSOG_knots": 0.7
+          }
+        }
+      }
+    },
+    "derived_from": {
+      "source": "DMA_AIS",
+      "mmsi": 219027963,
+      "ais_row_index": 32874,
+      "timestamp": "2026-06-03T07:14:59",
+      "sog": 0.9,
+      "cog": null,
+      "cable_distance_m": 80.0
+    },
+    "derivation": {
+      "formula": "severity = w_p*exp(-d/d0) + w_s*exp(-(SOG-peak)^2/(2*sigma^2)) + w_k*kin + noise",
+      "terms": {
+        "proximity": 0.9049,
+        "speed_term": 0.8353,
+        "kinematics": 0.0,
+        "seeded_noise": -0.0094
+      },
+      "params": {
+        "w_proximity": 0.45,
+        "w_speed": 0.35,
+        "w_kinematics": 0.2,
+        "d0_m": 800.0,
+        "peak_knots": 1.5,
+        "sigma_knots": 1.0,
+        "noise_amplitude": 0.03,
+        "seed": 20260610
+      },
+      "delta": {
+        "dCOG_deg": 0.0,
+        "dSOG_knots": 0.7
+      }
+    }
+  },
+  "ais_tracks_candidates": {
+    "primary_mmsi": 219027963,
+    "raw_ais_excerpt": [
+      {
+        "timestamp": "2026-06-03T07:14:59",
+        "mmsi": 219027963,
+        "lat": 55.18616,
+        "lon": 14.702547,
+        "sog": 0.9,
+        "cog": null,
+        "nav_status": "Unknown value",
+        "cable_dist_m": 80.0
+      },
+      {
+        "timestamp": "2026-06-03T07:16:09",
+        "mmsi": 219027963,
+        "lat": 55.18616,
+        "lon": 14.702547,
+        "sog": 0.9,
+        "cog": null,
+        "nav_status": "Unknown value",
+        "cable_dist_m": 80.0
+      },
+      {
+        "timestamp": "2026-06-03T07:17:05",
+        "mmsi": 219027963,
+        "lat": 55.18616,
+        "lon": 14.702547,
+        "sog": 0.9,
+        "cog": null,
+        "nav_status": "Unknown value",
+        "cable_dist_m": 80.0
+      },
+      {
+        "timestamp": "2026-06-03T07:20:58",
+        "mmsi": 219027963,
+        "lat": 55.186118,
+        "lon": 14.702587,
+        "sog": 0.3,
+        "cog": null,
+        "nav_status": "Unknown value",
+        "cable_dist_m": 84.0
+      },
+      {
+        "timestamp": "2026-06-03T07:22:09",
+        "mmsi": 219027963,
+        "lat": 55.186118,
+        "lon": 14.702587,
+        "sog": 0.3,
+        "cog": null,
+        "nav_status": "Unknown value",
+        "cable_dist_m": 84.0
+      },
+      {
+        "timestamp": "2026-06-03T07:23:05",
+        "mmsi": 219027963,
+        "lat": 55.186118,
+        "lon": 14.702587,
+        "sog": 0.3,
+        "cog": null,
+        "nav_status": "Unknown value",
+        "cable_dist_m": 84.0
+      }
+    ],
+    "vessel_behaviors": [
+      {
+        "mmsi": 219004347,
+        "min_cable_dist_m": 185.3,
+        "dwell_in_zone_s": 1621.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.039,
+        "speed_var": 0.0025,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 735.0,
+        "event_space_dist_m": 267.5,
+        "n_points": 18
+      },
+      {
+        "mmsi": 219019909,
+        "min_cable_dist_m": 192.0,
+        "dwell_in_zone_s": 1684.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.047,
+        "speed_var": 0.0026,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 289.0,
+        "event_space_dist_m": 130.2,
+        "n_points": 17
+      },
+      {
+        "mmsi": 219021300,
+        "min_cable_dist_m": 228.8,
+        "dwell_in_zone_s": 794.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.0,
+        "speed_var": 0.0,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 421.0,
+        "event_space_dist_m": 150.3,
+        "n_points": 5
+      },
+      {
+        "mmsi": 219027963,
+        "min_cable_dist_m": 80.0,
+        "dwell_in_zone_s": 846.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.557,
+        "speed_var": 0.1029,
+        "cable_crossings": 1,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 0.0,
+        "event_space_dist_m": 0.0,
+        "n_points": 7
+      },
+      {
+        "mmsi": 219031421,
+        "min_cable_dist_m": 15.1,
+        "dwell_in_zone_s": 0.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.0,
+        "speed_var": 0.0,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 539.0,
+        "event_space_dist_m": 98.0,
+        "n_points": 1
+      },
+      {
+        "mmsi": 219978000,
+        "min_cable_dist_m": 26.4,
+        "dwell_in_zone_s": 1650.0,
+        "entered_zone": true,
+        "speed_mean_kt": 0.0,
+        "speed_var": 0.0,
+        "cable_crossings": 0,
+        "max_turn_deg": 0.0,
+        "ais_gap_minutes": 0.0,
+        "event_time_diff_s": 443.0,
+        "event_space_dist_m": 54.6,
+        "n_points": 17
+      }
+    ],
+    "cause_candidates": [
+      {
+        "name": "specific_vessel",
+        "score": 0.5808,
+        "factors": [
+          {
+            "factor": "활동성(횡단/표류/이동/급선회)",
+            "value": 1.0,
+            "contribution": 0.0
+          },
+          {
+            "factor": "케이블 횡단",
+            "value": "1회",
+            "contribution": 0.4
+          },
+          {
+            "factor": "보호구역 체류",
+            "value": "846.0s",
+            "contribution": 0.1175
+          },
+          {
+            "factor": "이동/표류(속도)",
+            "value": "mean 0.557kt var 0.1029",
+            "contribution": 0.0763
+          },
+          {
+            "factor": "케이블 근접",
+            "value": "80.0m",
+            "contribution": 0.552
+          },
+          {
+            "factor": "이벤트 공간근접",
+            "value": "0.0m",
+            "contribution": 0.0
+          },
+          {
+            "factor": "반복접근 이력",
+            "value": "4회",
+            "contribution": 0.12
+          }
+        ]
+      },
+      {
+        "name": "ais_dark",
+        "score": 0.0,
+        "factors": []
+      },
+      {
+        "name": "legal_fishing",
+        "score": 0.0,
+        "factors": []
+      },
+      {
+        "name": "natural_noise",
+        "score": 0.0,
+        "factors": [
+          {
+            "factor": "파고",
+            "value": "0.9m",
+            "contribution": 0.0
+          },
+          {
+            "factor": "활동성 의심 선박 부재",
+            "value": "아니오(max_act 1.0)",
+            "contribution": 0.0
+          }
+        ]
+      },
+      {
+        "name": "permitted_maintenance",
+        "score": 0.0,
+        "factors": []
+      },
+      {
+        "name": "sensor_fault",
+        "score": 0.0,
+        "factors": []
+      }
+    ]
+  },
+  "metoc": {
+    "wave_height_m": 0.9,
+    "current": "low"
+  },
+  "permit_check": {
+    "permit_match": null,
+    "result": "해당 허가 없음"
+  },
+  "sensor_health": {
+    "node_id": "SN-BHC-1-M",
+    "dist_m": 80.6,
+    "degraded": false
+  },
+  "risk_breakdown": {
+    "contributions": {
+      "sensor_event_strength": 17.26,
+      "cable_proximity": 17.98,
+      "vessel_behavior": 10.76,
+      "ais_gap": 0.0,
+      "vessel_history": 5
+    },
+    "component_max": {
+      "sensor_event_strength": 25,
+      "cable_proximity": 20,
+      "vessel_behavior": 20,
+      "ais_gap": 10,
+      "vessel_history": 5
+    },
+    "raw": 51.0,
+    "raw_max": 80,
+    "normalized": 63.75,
+    "discounts": {
+      "maintenance_permit": 0.0,
+      "metoc_noise": 0.0,
+      "sensor_health": 0.0,
+      "total": 0.0,
+      "rationale": []
+    },
+    "risk": 63.75
+  },
+  "decision": {
+    "branch": "alert",
+    "top_candidate": "specific_vessel",
+    "second_candidate": "ais_dark",
+    "margin": 0.5808,
+    "rationale": "위협 후보 'specific_vessel'(점수 0.58) 1순위, risk 63.8 ≥ 60.0 → 경보."
+  },
+  "expected": {
+    "decision": "alert",
+    "top_candidate": "specific_vessel"
+  }
+}
